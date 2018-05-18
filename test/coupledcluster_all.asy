@@ -4,6 +4,7 @@ pair S;
 
 CoupledClusterT1 Tai = CoupledClusterT1(
   "a i",
+  symbol = 'T',
   angles=new real[]{110,70}
 );
 
@@ -20,6 +21,11 @@ CoupledClusterT3 Tabcijk = CoupledClusterT3(
 S = (0,0);
 write(shift(S) * Tai);
 draw(shift(S) * Tai, true);
+label(
+  Tai.diagram.name, shift(S + (30,20)) * (
+    0.5*Tai.diagram.vertices[0]
+  )
+);
 
 S = (100,0);
 write(shift(S) * Tabij);
