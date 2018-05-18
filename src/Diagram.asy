@@ -12,6 +12,7 @@
  */
 struct Diagram {
   string name;
+  string symbol;
   string particle_indices = "abcdefgh";
   string hole_indices = "ijklmno";
   string indices[];
@@ -96,9 +97,12 @@ void draw(Diagram diagram, bool labels=false){
     };                                                                         \
     void operator init(                                                        \
       string indices,                                                          \
+      string symbol = 'X',                                                     \
       pair vertices[] = {},                                                    \
       real angles[] = {}                                                       \
     ){                                                                         \
+      this.diagram.indices = split(indices);                                   \
+      this.diagram.symbol = symbol;                                            \
       if (vertices.length == 0) {                                              \
         for ( int i = 0; i < this.N; i+=1 ) {                                  \
           this.diagram.vertices[i] = (i * this.edges_length, 0);               \
@@ -113,7 +117,6 @@ void draw(Diagram diagram, bool labels=false){
       } else {                                                                 \
         this.angles = angles;                                                  \
       }                                                                        \
-      this.diagram.indices = split(indices);                                   \
       string lower_indices = this.diagram.indices[0];                          \
       for ( int i = 1; i < this.N; i+=1 ) {                                    \
          lower_indices += ' ' + this.diagram.indices[i];                       \
@@ -122,7 +125,8 @@ void draw(Diagram diagram, bool labels=false){
       for ( int i = this.N + 1; i < 2 * this.N; i+=1 ) {                       \
          upper_indices += ' ' + this.diagram.indices[i];                       \
       }                                                                        \
-      this.diagram.name = '$X_{'+lower_indices+'}^{'+upper_indices+'}$';       \
+      this.diagram.name = '$'+symbol+'_{'+lower_indices+                       \
+                                               '}^{'+upper_indices+'}$';       \
       pair point;                                                              \
       real angle;                                                              \
       for ( int i = 0; i < this.diagram.indices.length; i+=1 ) {               \

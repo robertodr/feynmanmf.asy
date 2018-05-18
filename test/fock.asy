@@ -6,10 +6,10 @@ void draw_fock(OneBodyDiagram term, bool labels=false){
   label(term.diagram.name, term.diagram.vertices[0]);
 };
 
-OneBodyDiagram fock_OO = OneBodyDiagram("i_1 i_2", angles=new real[]{90, 90});
-OneBodyDiagram fock_VO = OneBodyDiagram("a_1 i_1", angles=new real[]{70, 110});
-OneBodyDiagram fock_OV = OneBodyDiagram("i_1 a_1", angles=new real[]{110, 70});
-OneBodyDiagram fock_VV = OneBodyDiagram("a_1 b_1", angles=new real[]{90, 90});
+OneBodyDiagram fock_OO = OneBodyDiagram("i_1 i_2", symbol='f', angles=new real[]{90, 90});
+OneBodyDiagram fock_VO = OneBodyDiagram("a_1 i_1", symbol='f', angles=new real[]{70, 110});
+OneBodyDiagram fock_OV = OneBodyDiagram("i_1 a_1", symbol='f', angles=new real[]{110, 70});
+OneBodyDiagram fock_VV = OneBodyDiagram("a_1 b_1", symbol='f', angles=new real[]{90, 90});
 
 OneBodyDiagram diagrams[] = {fock_OO, fock_VO, fock_OV, fock_VV};
 
