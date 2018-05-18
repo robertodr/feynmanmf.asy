@@ -9,7 +9,7 @@ fmdefaults();
 real photonwidth = 14;
 real photonamplitude = -1;
 
-// Change also the current pend and arrows to mock feynmanmf
+// Change also the current pen and arrows to mock feynmanmf
 currentpen = linewidth(2bp)+fontsize(20);
 currentarrow = MidArrow(8bp);
 
