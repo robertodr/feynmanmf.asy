@@ -3,17 +3,17 @@ import feynmanmf;
 pair S;
 
 CoupledClusterT1 Tai = CoupledClusterT1(
-  "ai",
+  "a i",
   angles=new real[]{110,70}
 );
 
 CoupledClusterT2 Tabij = CoupledClusterT2(
-  "abij",
+  "a b i j",
   angles=new real[]{110,110,70,70}
 );
 
 CoupledClusterT3 Tabcijk = CoupledClusterT3(
-  "abcijk",
+  "a b c i j k",
   angles=new real[]{110,110,110,70,70,70}
 );
 

@@ -14,15 +14,15 @@ struct Diagram {
   string name;
   string particle_indices = "abcdefgh";
   string hole_indices = "ijklmno";
-  string indices;
+  string indices[];
   path edges[];
   pair vertices[];
   void clear_edges() { this.edges = new path[]{}; };
-  bool is_hole(int i){
-    return find(this.hole_indices, substr(this.indices, i, 1)) != -1;
+  bool is_hole(int i) {
+    return find(this.hole_indices, substr(this.indices[i], 0, 1)) != -1;
   };
-  bool is_particle(int i){
-    return find(this.particle_indices, substr(this.indices, i, 1)) != -1;
+  bool is_particle(int i) {
+    return find(this.particle_indices, substr(this.indices[i], 0, 1)) != -1;
   };
 }
 
@@ -60,8 +60,7 @@ void draw(Diagram diagram, bool labels=false){
   }
   if ( labels ) {
     for ( int i = 0; i < diagram.edges.length; i+=1 ) {
-      string index = substr(diagram.indices, i, 1);
-      label("$"+index+"$", diagram.edges[i]);
+      label("$"+diagram.indices[i]+"$", diagram.edges[i]);
     }
   }
 };
@@ -114,18 +113,19 @@ void draw(Diagram diagram, bool labels=false){
       } else {                                                                 \
         this.angles = angles;                                                  \
       }                                                                        \
-      this.diagram.indices = indices;                                          \
-      this.diagram.name = '$X^{'+substr(this.diagram.indices, 0, this.N)+      \
-            '}_{'+substr(this.diagram.indices, this.N)+'}$';                   \
-      if ( length(this.diagram.indices) != 2 * this.N ) {                      \
-        write(                                                                 \
-          'Indices Length of the Tensor must be ' + (string) (this.N * 2)      \
-        );                                                                     \
-        exit();                                                                \
+      this.diagram.indices = split(indices);                                   \
+      string lower_indices = this.diagram.indices[0];                          \
+      for ( int i = 1; i < this.N; i+=1 ) {                                    \
+         lower_indices += ' ' + this.diagram.indices[i];                       \
       }                                                                        \
+      string upper_indices = this.diagram.indices[N];                          \
+      for ( int i = this.N + 1; i < 2 * this.N; i+=1 ) {                       \
+         upper_indices += ' ' + this.diagram.indices[i];                       \
+      }                                                                        \
+      this.diagram.name = '$X_{'+lower_indices+'}^{'+upper_indices+'}$';       \
       pair point;                                                              \
       real angle;                                                              \
-      for ( int i = 0; i < length(this.diagram.indices); i+=1 ) {              \
+      for ( int i = 0; i < this.diagram.indices.length; i+=1 ) {               \
         point = this.diagram.vertices[i % this.N];                             \
         angle = this.angles[i];                                                \
         if (i < this.N) {                                                      \

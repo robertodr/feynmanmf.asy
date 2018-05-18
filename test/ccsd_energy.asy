@@ -4,17 +4,17 @@ real height = 150;
 real width = 100;
 
 CoupledClusterT1 Tai = CoupledClusterT1(
-  "ai",
+  "a i",
   angles=new real[]{110,70}
 );
 
 CoupledClusterT2 Tabij = CoupledClusterT2(
-  "abij",
+  "a b i j",
   angles=new real[]{70,70,110,110}
 );
 
 CoulombIntegral Vijab = shift(00,150)*CoulombIntegral(
-  "ijab",
+  "i j a b",
   angles=new real[]{110,110,70,70}
 );
 

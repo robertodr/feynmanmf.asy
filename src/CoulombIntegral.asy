@@ -19,8 +19,7 @@ void draw(CoulombIntegral Vpqrs, bool labels=false){
   }
   if ( labels ) {
     for ( int i = 0; i < Vpqrs.diagram.edges.length; i+=1 ) {
-      string index = substr(Vpqrs.diagram.indices, i, 1);
-      label("$"+index+"$", Vpqrs.diagram.edges[i]);
+      label("$"+Vpqrs.diagram.indices[i]+"$", Vpqrs.diagram.edges[i]);
     }
   }
 };

@@ -1,67 +1,67 @@
 import feynmanmf;
 
 CoulombIntegral Vabcd = CoulombIntegral(
-  "abcd",
+  "a b c d",
   angles=new real[]{110,70,110,70}
 );
 CoulombIntegral Vabci = CoulombIntegral(
-  "abci",
+  "a b c i",
   angles=new real[]{110,70,110,110}
 );
 CoulombIntegral Vabic = CoulombIntegral(
-  "abic",
+  "a b i c",
   angles=new real[]{110,70,70,70}
 );
 CoulombIntegral Vaibc = CoulombIntegral(
-  "aibc",
+  "a i b c",
   angles=new real[]{110,110,110,70}
 );
 CoulombIntegral Viabc = CoulombIntegral(
-  "iabc",
+  "i a b c",
   angles=new real[]{70,70,110,70}
 );
 CoulombIntegral Vabij = CoulombIntegral(
-  "abij",
+  "a b i j",
   angles=new real[]{110,110,70,70}
 );
 CoulombIntegral Vaibj = CoulombIntegral(
-  "aibj",
+  "a i b j",
   angles=new real[]{110,70,110,70}
 );
 CoulombIntegral Viabj = CoulombIntegral(
-  "iabj",
+  "i a b j",
   angles=new real[]{70,70,110,110}
 );
 CoulombIntegral Vaijb = CoulombIntegral(
-  "aijb",
+  "a i j b",
   angles=new real[]{110,110,70,70}
 );
 CoulombIntegral Viajb = CoulombIntegral(
-  "iajb",
+  "i a j b",
   angles=new real[]{110,70,110,70}
 );
 CoulombIntegral Vijab = CoulombIntegral(
-  "ijab",
+  "i j a b",
   angles=new real[]{110,110,70,70}
 );
 CoulombIntegral Vaijk = CoulombIntegral(
-  "aijk",
+  "a i j k",
   angles=new real[]{70,70,110,70}
 );
 CoulombIntegral Viajk = CoulombIntegral(
-  "iajk",
+  "i a j k",
   angles=new real[]{110,70,110,110}
 );
 CoulombIntegral Vijak = CoulombIntegral(
-  "ijak",
+  "i j a k",
   angles=new real[]{70,70,110,70}
 );
 CoulombIntegral Vijka = CoulombIntegral(
-  "ijka",
+  "i j k a",
   angles=new real[]{110,70,110,110}
 );
 CoulombIntegral Vijkl = CoulombIntegral(
-  "ijkl",
+  "i j k l",
   angles=new real[]{110,70,110,70}
 );
 

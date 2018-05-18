@@ -15,7 +15,6 @@ CREATE_NBODY_DIAGRAM(CoupledClusterT3, 3)
 DIAGRAM_CREATE_TRANSFORM_OPERATOR(CoupledClusterT3)
 DIAGRAM_CREATE_CASTING_OPERATOR(CoupledClusterT3)
 
-
 void draw(CoupledClusterT1 term, bool labels=false){
   real XProj = dot(
     min(term.diagram.edges[0]) - term.diagram.vertices[0],
@@ -29,8 +28,7 @@ void draw(CoupledClusterT1 term, bool labels=false){
   }
   if ( labels ) {
     for ( int i = 0; i < term.diagram.edges.length; i+=1 ) {
-      string index = substr(term.diagram.indices, i, 1);
-      label("$"+index+"$", term.diagram.edges[i]);
+      label("$"+term.diagram.indices[i]+"$", term.diagram.edges[i]);
     }
   }
 };
@@ -42,8 +40,7 @@ void draw(CoupledClusterT2 term, bool labels=false){
   }
   if ( labels ) {
     for ( int i = 0; i < term.diagram.edges.length; i+=1 ) {
-      string index = substr(term.diagram.indices, i, 1);
-      label("$"+index+"$", term.diagram.edges[i]);
+      label("$"+term.diagram.indices[i]+"$", term.diagram.edges[i]);
     }
   }
 };
@@ -58,8 +55,7 @@ void draw(CoupledClusterT3 term, bool labels=false){
   }
   if ( labels ) {
     for ( int i = 0; i < term.diagram.edges.length; i+=1 ) {
-      string index = substr(term.diagram.indices, i, 1);
-      label("$"+index+"$", term.diagram.edges[i]);
+      label("$"+term.diagram.indices[i]+"$", term.diagram.edges[i]);
     }
   }
 };
